@@ -26,12 +26,13 @@ const listBookAPI = function (type) {
       url: 'https://127.0.0.1:8080/shelf?type=' + type,
       method: 'GET',
       success: function (res) {
-        resolve()
-        //todo
+        onsole.log(res)
+        let result=res.data.content
+        resolve(result)
       },
       fail: function (res) {
-        reject()
-        //todo
+        reject(res.data.message)//带上错误信息
+       
       }
     })
   })
@@ -39,5 +40,5 @@ const listBookAPI = function (type) {
 
 export default {
   addToShelfAPI,
-  listBookAPI
+  listBookAPI,
 }

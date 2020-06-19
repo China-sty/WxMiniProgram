@@ -4,9 +4,64 @@
   right: 20px;
 }
 
-.search{
-  margin-left: 5vh;
-  margin-top: 2vh;
-  padding-bottom: 4vh;
-  
+.ding{
+  position: absolute;
+
+  background-color:#fafafa ;
+  z-index: 2;
+  width: 105%;
+  height: 6.8%;
+  margin-left: -40rpx;
 }
+
+.zhong{
+  position: absolute;
+  z-index: 1;
+}
+
+.search{  
+  width: 80%;  
+}  
+.search_arr {  
+  border: 1px solid #d0d0d0;  
+  border-radius: 10rpx;  
+  margin-left: 80rpx;  
+  margin-top: 12rpx; 
+}  
+.search_arr input{  
+  margin-left: 60rpx;  
+  height: 60rpx;  
+  border-radius: 5px;  
+}  
+.bc_text {  
+  line-height: 68rpx;  
+  height: 68rpx;  
+  margin-top: 34rpx;  
+}  
+  
+.sousuo {  
+  margin-left: 10rpx;  
+  margin-top: 12px; 
+  width: 13%;  
+  line-height: 150%;  
+  text-align: center;  
+  border: 2px solid #e7cccc;  
+  border-radius: 20rpx;  
+
+}  
+.page_row{  
+  display: flex;  
+  flex-direction: row  
+  
+  z-index=1;
+}  
+.searchcion {  
+  margin: 10rpx 10rpx 10rpx 10rpx;  
+  position: absolute;  
+  left:25rpx;  
+  z-index: 2;  
+  width: 20px;  
+  height: 20px;  
+  text-align: center;  
+}  
+

@@ -13,6 +13,9 @@ Page({
     booksnum:7,
     index1:null,//行数组
     index2:null,//列数组
+    centent_Show: true,
+    searchValue: null
+  },
     //分享链接
     share:function(event) {
       console.log("分享")
@@ -20,22 +23,48 @@ Page({
     //收藏链接
     shelf:function (event) {
       console.log("收藏")
-    }
+    },
+     //搜索内容导入
+     searchValueInput: function (e) {
 
-},
+      var value = e.detail.value;
+      this.setData({
+       searchValue: value,
+      });
+      if (value=="") {
+        this.setData({
+        centent_Show: false,
+        });
+       }
+       console.log(this.data.searchValue)
+       wx.setStorageSync("sv",this.data.searchValue );
+       wx.setStorageSync("ct",this.data.centent_Show );
+       },
+       
+    //搜索后跳转
+    suo: function (e) {
+      wx.navigateTo({
+       url: '../search/search',
+      })
+      },
+    bindButtonTap: function () {
+      this.setData({
+        focus: true
+      })
+    },
 
-handleChange ({ detail }) {
+    handleChange ({ detail }) {
     this.setData({
         current: detail.key
     });
-},
+    },
 
 //页面滚动执行方式
-onPageScroll(event){
-  this.setData({
-      scrollTop : event.scrollTop
-  })
-},
+    onPageScroll(event){
+      this.setData({
+        scrollTop : event.scrollTop
+      })
+    },
 
   /**
    * 生命周期函数--监听页面加载
@@ -96,5 +125,9 @@ onPageScroll(event){
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+
+
+ 
 })

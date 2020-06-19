@@ -15,9 +15,7 @@ App({
       })
     }
 
-    this.globalData = {
-      noteCache:''
-    }
+    this.globalData = {}
 
   },
 data:{
